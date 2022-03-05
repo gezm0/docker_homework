@@ -3,4 +3,5 @@ WORKDIR /app
 COPY . .
 EXPOSE 3000
 RUN npm install -i
-CMD ["npm", "run", "start"]
+RUN npm run build && npm install -g serve
+CMD ["serve", "-s", "build"]
