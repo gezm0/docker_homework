@@ -1,0 +1,5 @@
+#!/bin/sh
+
+POSTGRES_USER=test 
+POSTGRES_PASSWORD=test
+POSTGRES_DB=test
