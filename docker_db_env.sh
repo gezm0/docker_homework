@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 POSTGRES_NAME=django
 POSTGRES_USER=django
