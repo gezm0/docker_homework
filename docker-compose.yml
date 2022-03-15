@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+
+  web:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - backend
+    networks:
+      - frontend
+    healthcheck:
+      test: curl -sS http://127.0.0.1 || echo 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./lib_catalog
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - frontend
+      - backend
+    healthcheck:
+      test: curl -sS http://127.0.0.1 || echo 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  db:
+    image: "postgres:alpine3.14"
+    container_name: db_2022-03-15_homework
+    env_file:
+       - .env
+    networks:
+      - frontend
+      - backend
+  
+networks:
+
+  frontend:
+    driver: bridge
+
+  backend:
+    driver: bridge

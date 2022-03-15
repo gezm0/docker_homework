@@ -84,7 +84,7 @@ DATABASES = {
         "NAME": "django",
         "USER": "django",
         "PASSWORD": "django",
-        "HOST": "postgresql_app",
+        "HOST": "db_2022-03-15_homework",
         "PORT": "5432",
         "CONN_MAX_AGE": None
     },
@@ -135,12 +135,16 @@ REST_FRAMEWORK = {
                             'rest_framework.filters.SearchFilter']
 }
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-]
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-]
+#CORS_ORIGIN_WHITELIST = [
+#    "http://localhost:3000",
+#]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+#CORS_ALLOWED_ORIGINS = [
+#    'http://localhost:3000',
+#]
 
 FIXTURES_DIRS = os.path.join(BASE_DIR, 'catalog/fixtures')
