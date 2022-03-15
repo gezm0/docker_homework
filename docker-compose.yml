@@ -12,7 +12,7 @@ services:
     networks:
       - frontend
     healthcheck:
-      test: curl -sS http://127.0.0.1 || echo 1
+      test: curl -sS http://127.0.0.1:3000 || echo 1
       interval: 10s
       timeout: 5s
       retries: 5
@@ -27,7 +27,7 @@ services:
       - frontend
       - backend
     healthcheck:
-      test: curl -sS http://127.0.0.1 || echo 1
+      test: curl -sS http://127.0.0.1:8000 || echo 1
       interval: 10s
       timeout: 5s
       retries: 5
