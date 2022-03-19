@@ -46,7 +46,6 @@ services:
     
       
     networks:
-      - frontend
       - backend
   
 networks:
